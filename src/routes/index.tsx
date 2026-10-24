@@ -12,14 +12,14 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       {
-        title: "Vaamika — Baby Girl Naming Ceremony Reveal",
+        title: "Baby Girl Naming Ceremony Reveal",
       },
       {
         name: "description",
         content:
           "With the blessings of Lord Ganesha, join us for the naming ceremony reveal of our darling baby girl — Vaamika.",
       },
-      { property: "og:title", content: "Vaamika — Naming Ceremony Reveal" },
+      { property: "og:title", content: "Naming Ceremony Reveal" },
       {
         property: "og:description",
         content:
@@ -27,7 +27,7 @@ export const Route = createFileRoute("/")({
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Vaamika — Naming Ceremony Reveal" },
+      { name: "twitter:title", content: "Naming Ceremony Reveal" },
       {
         name: "twitter:description",
         content:
