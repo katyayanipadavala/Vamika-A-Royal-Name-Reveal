@@ -1,0 +1,234 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system — "Bangaram" naming ceremony.
+ * Ceremonial palette: warm cream, temple maroon, temple gold, henna leaf.
+ * All colors use oklch and are registered in @theme inline below.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Ceremonial extensions */
+  --color-gold: var(--gold);
+  --color-gold-deep: var(--gold-deep);
+  --color-gold-soft: var(--gold-soft);
+  --color-maroon: var(--maroon);
+  --color-maroon-deep: var(--maroon-deep);
+  --color-cream: var(--cream);
+  --color-leaf: var(--leaf);
+
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-script: "Great Vibes", cursive;
+  --font-telugu: "Noto Serif Telugu", serif;
+
+  --gradient-gold-text: linear-gradient(
+    100deg,
+    oklch(0.55 0.11 60) 0%,
+    oklch(0.82 0.15 85) 25%,
+    oklch(0.68 0.13 70) 50%,
+    oklch(0.88 0.16 90) 75%,
+    oklch(0.55 0.11 60) 100%
+  );
+  --shadow-temple: 0 18px 45px -18px color-mix(in oklab, var(--maroon) 45%, transparent);
+  --shadow-gold-glow: 0 0 40px color-mix(in oklab, var(--gold) 45%, transparent);
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(0.975 0.02 88);
+  --foreground: oklch(0.3 0.07 40);
+  --card: oklch(0.99 0.012 90);
+  --card-foreground: oklch(0.3 0.07 40);
+  --primary: oklch(0.62 0.14 55);
+  --primary-foreground: oklch(0.99 0.01 90);
+  --secondary: oklch(0.93 0.045 88);
+  --secondary-foreground: oklch(0.38 0.08 40);
+  --muted: oklch(0.94 0.035 88);
+  --muted-foreground: oklch(0.5 0.05 50);
+  --accent: oklch(0.42 0.14 35);
+  --accent-foreground: oklch(0.98 0.015 88);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.984 0.003 247.858);
+  --border: oklch(0.87 0.06 78);
+  --input: oklch(0.87 0.06 78);
+  --ring: oklch(0.72 0.12 70);
+
+  --gold: oklch(0.78 0.14 85);
+  --gold-deep: oklch(0.62 0.13 65);
+  --gold-soft: oklch(0.9 0.07 90);
+  --maroon: oklch(0.44 0.15 32);
+  --maroon-deep: oklch(0.3 0.11 30);
+  --cream: oklch(0.975 0.02 88);
+  --leaf: oklch(0.55 0.12 140);
+}
+
+.dark {
+  --background: oklch(0.22 0.04 40);
+  --foreground: oklch(0.95 0.03 88);
+  --card: oklch(0.27 0.05 40);
+  --card-foreground: oklch(0.95 0.03 88);
+  --popover: oklch(0.27 0.05 40);
+  --popover-foreground: oklch(0.95 0.03 88);
+  --primary: oklch(0.82 0.13 85);
+  --primary-foreground: oklch(0.25 0.05 40);
+  --secondary: oklch(0.32 0.05 40);
+  --secondary-foreground: oklch(0.95 0.03 88);
+  --muted: oklch(0.32 0.05 40);
+  --muted-foreground: oklch(0.75 0.04 80);
+  --accent: oklch(0.55 0.13 50);
+  --accent-foreground: oklch(0.98 0.015 88);
+  --destructive: oklch(0.704 0.191 22.216);
+  --destructive-foreground: oklch(0.984 0.003 247.858);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 16%);
+  --ring: oklch(0.72 0.12 70);
+
+  --gold: oklch(0.82 0.13 85);
+  --gold-deep: oklch(0.68 0.12 70);
+  --gold-soft: oklch(0.6 0.08 80);
+  --maroon: oklch(0.55 0.14 38);
+  --maroon-deep: oklch(0.35 0.1 32);
+  --cream: oklch(0.22 0.04 40);
+  --leaf: oklch(0.65 0.12 145);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .text-gradient-gold {
+    background-image: var(--gradient-gold-text);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  .shadow-temple {
+    box-shadow: var(--shadow-temple);
+  }
+
+  .shadow-gold-glow {
+    box-shadow: var(--shadow-gold-glow);
+  }
+
+  /* Slow, dignified shimmer across gold lettering */
+  .animate-gold-shimmer {
+    background-size: 200% auto;
+    animation: gold-shimmer 5s linear infinite;
+  }
+
+  .animate-halo-pulse {
+    animation: halo-pulse 3.2s ease-in-out infinite;
+  }
+
+  .animate-float-slow {
+    animation: float-slow 5s ease-in-out infinite;
+  }
+
+  .animate-fade-up {
+    animation: fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .animate-petal-fall {
+    animation: petal-fall linear infinite;
+  }
+}
+
+@keyframes gold-shimmer {
+  to {
+    background-position: 200% center;
+  }
+}
+
+@keyframes halo-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 0.9;
+  }
+}
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes petal-fall {
+  0% {
+    transform: translateY(-8vh) rotate(0deg);
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) rotate(340deg);
+    opacity: 0.9;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-gold-shimmer,
+  .animate-halo-pulse,
+  .animate-float-slow,
+  .animate-petal-fall {
+    animation: none;
+  }
+}
