@@ -197,7 +197,7 @@ function ThaliCard() {
         className="h-44 w-full rounded-2xl object-cover"
       />
       <figcaption className="px-2 pt-3 pb-1 font-display text-sm text-muted-foreground italic">
-        Sacred offerings for Vaamika’s naming ceremony.
+        Sacred offerings for naming ceremony.
       </figcaption>
     </figure>
   );
